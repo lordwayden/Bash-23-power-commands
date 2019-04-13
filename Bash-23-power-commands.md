@@ -1,18 +1,23 @@
 #Посмотрите на команду whoami, которая проверяет имя пользователя:
+
 username@hell:~$ whoami
 username
 
 #Как можно запустить команду bash от имени другого пользователя, с sudo -u username:
+
 username@hell:~$ sudo -u test touch def && ls -l
 total 0
 -rw-r--r-- 1 test test 0 Jan 11 20:05 def
+
 #Когда не указан флаг -u, команда выполняется от имени суперпользователя root без ограничений:
+
 username@hell:~$ sudo touch ghi && ls -l
 total 662936
 -rw-r--r-- 1 root      root              0 Feb 27 14:35 ghi
 drwxr-xr-x 4 username username      4096 Feb  5 23:54 go
 
 #Стать другим пользователем. С su это реально. Чтобы вернуться в свою учетную запись, используйте exit:
+
 username@hell:~$ su luser
 Password:
 $ whoami
@@ -21,6 +26,7 @@ $ exit
  
 username@hell:~$ whoami
 username
+
 #Суперпользователь – единственный пользователь, который может устанавливать программы, создавать новых юзеров и все в таком духе. Иногда можно забыть об этом и получить ошибку:
 username@hell:~$ apt install golang
 E: Could not open lock file /var/lib/dpkg/lock-frontend - open (13: Permission denied)
